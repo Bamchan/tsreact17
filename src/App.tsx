@@ -1,24 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+// import Show from './components/decorator';
+// import Sync from './components/sync/Sync';
+import Hook from './components/hook'
+import RenderPropsComponent from './components/RenderProps';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Show name={'chenjuntao'}></Show> */}
+      {/* <Sync></Sync> */}
+      <Hook></Hook>
+      {/* <RenderPropsComponent
+        render={
+          (data:string) => {
+            return (
+              <h1>{data}</h1>
+            )
+          }
+        }
+      ></RenderPropsComponent> */}
+        <ul>
+      {
+        new Array(30000).fill(1).map((_, index) => {
+          return (
+            <li key={index}>
+              {index}
+            </li>
+          )
+        })
+      }
+        </ul>
     </div>
   );
 }
